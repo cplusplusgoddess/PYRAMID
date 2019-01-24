@@ -22,7 +22,7 @@
 
 #include <iostream>
 #include <string>
-#include "pyramid.cc"
+#include "pyramid.cpp"
 
 using namespace std;
 
