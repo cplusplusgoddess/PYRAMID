@@ -11,7 +11,7 @@
 //  2    7   8    the direction of travel from the top down. 
 //  /\  /\  /\
 // /  \/  \/  \   Example: the path "L L L" would generate a target of
-//10  5   6    9           300 = 5 x 3 x 2 x 10
+//10  5   6    9           300 = 5 x 3 x 2 x 5
 //                         "L L R" = 150
 //
 //			INPUT: An input file passed to the program as a parameter
