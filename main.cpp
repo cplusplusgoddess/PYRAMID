@@ -22,6 +22,7 @@
 
 #include <iostream>
 #include <string>
+#include <stdlib.h>
 #include "pyramid.cpp"
 
 using namespace std;
@@ -35,19 +36,18 @@ static void show_usage(std::string name)
 }
 int main(int argc, char *argv[]) 
 {
-   	std::string arg  = argv[1];
 	int target;
 
     // Check the command line arguments
-    if ((arg == "-h") || (arg == "--help") || (argc < 2 ))
-	{
         // user  is asking for help to run the program
+    if ( ( argc < 2 ) || !strcmp(argv[1], "-h") || !strcmp(argv[1], "--help") )
+	{
         show_usage(argv[0]);
         return(1);
-   	}
+   	};
 	// open up the input file and read in the data to the 
 	// Pyramid Object
-    ifstream infile(arg);
+    ifstream infile(argv[1]);
 	if (infile.is_open())  
 	{
 
@@ -55,7 +55,7 @@ int main(int argc, char *argv[])
 	    infile >> target;
 
 	}else{
-		cout << "Could not open file: " << arg ;
+		cout << "Could not open file: " << argv[1] ;
 		return(1);
 		
 	
@@ -82,7 +82,7 @@ int main(int argc, char *argv[])
 		infile.close();
 		return EXIT_FAILURE;
 	}catch(...){
-		cout << "Unknown Problem reading the file " << arg ;
+		cout << "Unknown Problem reading the file " << argv[1] ;
 		infile.close();
 		return EXIT_FAILURE;
 	} // end build pyramid fail
